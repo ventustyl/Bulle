@@ -1,4 +1,5 @@
 let compteur = document.querySelector("h3");
+let tempRestant = document.querySelector("h2");
 let valeur = 0;
 
 function fabriqueBulle() {
@@ -30,3 +31,20 @@ function fabriqueBulle() {
 }
 
 setInterval(fabriqueBulle, 500);
+
+function decompte() {
+  let temps = 30;
+  let decompte = setInterval(() => {
+    temps--;
+    console.log(temps);
+    tempRestant.textContent = "temps restant " + temps;
+    if (temps === 0) {
+      clearInterval(decompte);
+      if (window.confirm("Rejouer ?")) {
+        location.reload();
+      }
+    }
+  }, 1000);
+}
+
+window.onload = decompte();

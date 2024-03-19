@@ -2,6 +2,9 @@ body {
   overflow: hidden;
   min-height: 100vh;
   cursor: not-allowed;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .bulle {
@@ -25,7 +28,8 @@ body {
   }
 }
 
-h3 {
+h3,
+h2 {
   text-align: center;
   font-size: 4em;
   color: gray;
