@@ -6,7 +6,7 @@
 
 body {
   overflow: hidden;
-  min-height: 100vh;
+  height: 100vh;
   cursor: not-allowed;
   display: flex;
   justify-content: space-between;
