@@ -55,7 +55,7 @@ function decompte() {
       //   location.reload();
       // }
     }
-  }, 100);
+  }, 1000);
 }
 
 window.onload = decompte();
