@@ -1,5 +1,6 @@
 let compteur = document.querySelector("h3");
 let tempRestant = document.querySelector("h2");
+let score = document.querySelector(".score");
 let valeur = 0;
 
 function fabriqueBulle() {
@@ -12,6 +13,7 @@ function fabriqueBulle() {
   const taille = Math.random() * 100 + 20 + "px";
 
   bulle.style.width = taille;
+
   bulle.style.height = taille;
   bulle.style.top = Math.random() * 100 + 50 + "%";
   bulle.style.left = Math.random() * 100 + "%";
@@ -20,7 +22,14 @@ function fabriqueBulle() {
 
   bulle.addEventListener("click", () => {
     bulle.remove();
-    valeur = valeur + 1;
+    console.log(taille);
+    if (taille >= "20px" && taille <= "39px") {
+      valeur = valeur + 4;
+    } else if (taille >= "40px" && taille <= "59px") {
+      valeur = valeur + 2;
+    } else {
+      valeur = valeur + 1;
+    }
     console.log(valeur);
     compteur.textContent = valeur;
   });
@@ -36,15 +45,17 @@ function decompte() {
   let temps = 30;
   let decompte = setInterval(() => {
     temps--;
-    console.log(temps);
+
     tempRestant.textContent = "temps restant " + temps;
     if (temps === 0) {
       clearInterval(decompte);
-      if (window.confirm("Rejouer ?")) {
-        location.reload();
-      }
+      score.style.display = "flex";
+      score.style.zIndex = "9999999";
+      // if (window.confirm("Rejouer ?")) {
+      //   location.reload();
+      // }
     }
-  }, 1000);
+  }, 100);
 }
 
 window.onload = decompte();

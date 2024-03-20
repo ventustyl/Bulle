@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   overflow: hidden;
   min-height: 100vh;
@@ -29,10 +35,30 @@ body {
 }
 
 h3,
-h2 {
+h2,
+h1,
+button {
   text-align: center;
   font-size: 4em;
   color: gray;
   font-family: Montserrat, "sans-serif";
   z-index: 999;
+  padding: 5px 20px;
+}
+
+.score {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  cursor: not-allowed;
+  position: absolute;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  transition: all 0.5s;
+  display: none;
+  background-color: rgba(202, 202, 202, 0.438);
+  z-index: -1;
 }
