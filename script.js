@@ -10,7 +10,8 @@ function fabriqueBulle() {
 
   bulle.classList.add("bulle");
 
-  const taille = Math.random() * 100 + 20 + "px";
+  const tailleNum = Math.random() * 100 + 20;
+  const taille = tailleNum + "px";
 
   bulle.style.width = taille;
 
@@ -22,10 +23,10 @@ function fabriqueBulle() {
 
   bulle.addEventListener("click", () => {
     bulle.remove();
-    console.log(taille);
-    if (taille >= "20px" && taille <= "39px") {
+    console.log(tailleNum);
+    if (tailleNum >= 20 && tailleNum <= 39) {
       valeur = valeur + 4;
-    } else if (taille >= "40px" && taille <= "59px") {
+    } else if (tailleNum >= 40 && tailleNum <= 59) {
       valeur = valeur + 2;
     } else {
       valeur = valeur + 1;
